@@ -1,0 +1,18 @@
+---
+layout: nil
+---
+
+[{% for tag in site.tags limit:1000 %}
+    {
+        "tag": "{{ tag.first }}",
+        "posts": [{% for post in tag.last limit:1000 %}
+            {
+                "title": "{{ post.title }}",
+                "url": "{{ site.url }}{{ post.url }}",
+                "date": "{{ post.date | date: "%Y-%m-%d"}}",
+                "tags": {{ post.tags | downcase }},
+                "categories": "{{ post.categories }}"
+            }{% if forloop.last == false %},{% endif %}{% endfor %}
+        ]
+    }{% if forloop.last == false %},{% endif %}{% endfor %}
+]

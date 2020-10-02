@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+    <meta charset="UTF-8">
+    {% if page.url == "/" or page.url == "/index.html" or page.url == "" %}
+    <title>{{ site.title }}</title>
+    {% seo title=false %}
+    {% else %} 
+    {% seo %}
+    {% endif %} 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#24292e">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{ '/assets/js/side-btn.js' | relative_url }}"></script>
+</head>
+
+<body>
+    <header class="page-header" role="banner">
+        <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+        <h2 class="project-tagline"><a href="/">{{ page.description | default: site.description }}</a></h2>  
+    </header>
+
+    <main id="content" class="main-content" role="main">
+        {% if page.categories.size > 0 && page.url != "/" and page.url != "/index.html" and page.url != "" %}
+        <div>
+            <div class="category-text">本文分类：</div>
+            <div class="category-btn">{{ page.categories }}</div>
+        </div>
+        <hr>
+        {% endif %} 
+        
+        {% if page.toc %} 
+        <nav id="table-of-contents" role="navigation">
+            <p>本文目录</p>
+            {% include toc.html html=content sanitize=true h_min=2 h_max=3 %}
+        </nav>
+        {% endif %} 
+
+        {{ content }}
+
+        {% if page.url != "/" and page.url != "/index.html" and page.url != "" %}
+        <div class="copyinfo">本文来自 [{{ site.title }}]({{ site.domain }})，转载请注明出处。</div>
+        {% endif %} 
+
+        <footer class="site-footer">
+            <ul>
+                <li><a href="/abouts/site.html"><i class="fa fa-info"></i> 关于本站</a></li>
+                <li><a href="/abouts/disclaimer.html"><i class="fa fa-flag-o"></i> 免责声明</a></li>
+                <li><a href="/articles.html"><i class="fa fa-list-ul"></i> 文章列表</a></li>
+            </ul>
+            <ul>
+                <li><a target="_blank" href="http://beian.miit.gov.cn/">{{ site.beian_miit_no }}</a></li>
+                <li><a target="_blank" href="{{ site.beian_gov_url }}">{{ site.beian_gov_no }}</a></li>
+            </ul>
+            <ul>
+                <li>&copy; <a target="_blank" href="/">hiwzc.com</a></span> 2016-{{ site.time | date: "%Y" }}</li>
+                <li><i class="fa fa-github-alt"></i> Powered by <a target="_blank" href="{{ site.github_url }}">GitHub</a></li>
+            </ul>
+        </footer>
+
+        <div class="side-btn">
+            <a class="icon-item icon-go-index" href="javascript:void(0)" title="回主页"></a>
+            <a class="icon-item icon-go-top" href="javascript:void(0)" title="回顶部"></a>
+            <a class="icon-item icon-go-bottom" href="javascript:void(0)" title="回底部"></a>
+        </div>
+    </main>
+</body>
+
+</html>

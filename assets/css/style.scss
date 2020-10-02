@@ -1,0 +1,317 @@
+---
+---
+
+// Headers
+$header-heading-color: #fff !default;
+$header-bg-color: #24292e !default;
+$header-bg-color-secondary: #24292e !default;
+
+// Text
+$section-headings-color: #f05a23 !default;
+$body-text-color: #171717 !default;
+$body-link-color: #171717 !default;
+$blockquote-text-color: #646464 !default;
+
+// Code
+$code-bg-color: #f8f8f8 !default;
+$code-text-color: #222 !default;
+
+// Borders
+$border-color: #eff0f1 !default;
+$table-border-color: #eff0f1 !default;
+$hr-border-color: #eff0f1 !default;
+
+@import "{{ site.theme }}";
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+}
+
+a {
+  &:hover {
+    color: $section-headings-color;
+    text-decoration: none;
+  }
+}
+
+.page-header {
+  @include large {
+    padding: 2.25rem 6rem;
+  }
+
+  @include medium {
+    padding: 1.75rem 4rem;
+  }
+
+  @include small {
+    padding: 1rem 1rem;
+  }
+}
+
+.project-name {
+  @include large {
+    font-size: 2.25rem;
+  }
+}
+
+.project-tagline {
+  margin-bottom: 1rem;
+}
+
+.main-content {
+
+  @include large {
+    font-size: 1rem;
+  }
+
+  @include medium {
+    font-size: 0.9rem;
+  }
+
+  @include small {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    padding: 1em 1em 0em 1em;
+    border: solid 1px #eff0f1;
+
+    @include large {
+      font-size: 0.9rem;
+    }
+  
+    @include medium {
+      font-size: 0.8rem;
+    }
+  
+    @include small {
+      font-size: 0.8rem;
+    }
+    
+    p {
+      text-indent: 1em;
+      color: $blockquote-text-color;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1em;
+    font-size: 1em;
+  }
+
+  p {
+    text-indent: 2em;
+    
+    img {
+      margin-left: -2em;
+    }
+  }
+
+  li {
+    line-height: 2em;
+    
+    p {
+      text-indent: 0em;
+    }
+  }
+
+  table {
+    display: table;
+    word-break: break-all;
+
+    th {
+      background: $code-bg-color;
+    }
+  }
+
+  hr {
+    height: 1px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  ul {
+    margin-bottom: 1em;
+  }
+
+  ol {
+    margin-bottom: 1em;
+  }
+
+  .category-text {
+    height: 2em;
+    line-height: 2em;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.7em;
+    display: inline-block;
+  }
+
+  .category-btn {
+    background-color: $section-headings-color;
+    color: white;
+    height: 2em;
+    line-height: 2em;
+    padding: 0em 1em;
+    margin-right: 1em;
+    border-radius: 1em;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.7em;
+    display: inline-block;
+  }
+
+  .copyinfo {
+    padding: 1em;
+    margin-top: 1em;
+    border: solid 1px $border-color;
+    background-color: $code-bg-color;
+    color: $blockquote-text-color;
+    word-break: break-all;
+    
+    @include large {
+      font-size: 1rem;
+    }
+  
+    @include medium {
+      font-size: 0.9rem;
+    }
+  
+    @include small {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.project-tagline {
+  a {
+    text-decoration: none;
+    color: $header-heading-color;
+  }
+}
+
+.site-footer {
+  color: $blockquote-text-color;
+
+  @include large {
+    font-size: 0.9rem;
+  }
+
+  @include medium {
+    font-size: 0.8rem;
+  }
+
+  @include small {
+    font-size: 0.8rem;
+  }
+
+  a {
+    color: $blockquote-text-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+    li {
+      display: inline-block;
+      line-height: 2em;
+      padding-right: 2em;
+    }
+  }
+}
+
+.side-btn {
+  z-index: 2;
+  position: fixed;
+  _position: absolute;
+  bottom: 5%;
+  right: 1.5em;
+  width: 1.5em;
+
+  .icon-item {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: #444;
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:active {
+      background-color: rgba(0,0,0,.75)
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,.75)
+    }
+  }
+
+  .icon-go-top {
+    &:before {
+      content: "\f077";
+    }
+  }
+
+  .icon-go-index {
+    &:before {
+      content: "\f015";
+    }
+  }
+
+  .icon-go-bottom {
+    &:before {
+      content: "\f078";
+    }
+  }
+}
+
+.posts-list {
+  list-style-type: decimal-leading-zero;
+  margin: 0.5em;
+  text-indent: 1em;
+}
+
+.posts-item {
+  height: 2em;
+}
+
+.posts-date {
+  color: $blockquote-text-color;
+  float: right;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.category-item {
+  display: inline-block;
+  width: 17em;
+  padding: 0 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

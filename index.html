@@ -1,0 +1,31 @@
+---
+layout: default
+title: 时光记
+description: 王智超的个人空间
+---
+
+<h2><i class="fa fa-minus-square-o"></i> 最近更新</h2>
+<ul class="posts-list">
+    {% for post in site.posts limit:5 %}
+    <li class=posts-item”>
+        <a href="{{ post.url }}">[{{ post.categories }}] {{ post.title }}<div class="posts-date">{{ post.date | date:"%Y-%m-%d"}}</div></a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2><i class="fa fa-bookmark-o"></i> 文章分类</i></h2>
+
+{% if site.categories and site.categories.size > 0 %}
+    {% for category_name in site.category_names %}
+        {% assign posts = site.categories[category_name] %}
+        {% if posts and posts.size > 0 %}
+<h3><i class="fa fa-terminal"></i> {{ category_name }}</h2>
+            {% assign sorted_posts = posts | sort: "title" %}
+<ul class="category-list">
+            {% for post in sorted_posts %}
+<li class="category-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+    {% endfor %}
+{% endif %}

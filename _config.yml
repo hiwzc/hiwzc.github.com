@@ -1,1 +1,17 @@
 theme: jekyll-theme-cayman
+
+title: 时光记 - 王智超的个人空间
+description: 时光记 - 王智超的个人空间
+lang: zh-CN
+domain: www.hiwzc.com
+
+github_url: https://github.com/hiwzc
+beian_miit_no: 粤ICP备17127050号-1
+beian_gov_no: 粤公网安备44030602000643号
+beian_gov_url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602000643
+
+category_names: 
+  - Spring框架
+  - 数据库
+  - 软件和工具
+  - 杂记
