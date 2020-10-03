@@ -11,7 +11,9 @@ beian_gov_no: 粤公网安备44030602000643号
 beian_gov_url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602000643
 
 category_names: 
+  - Java
   - Spring框架
   - 数据库
-  - 软件和工具
+  - 工具
+  - 软件工程
   - 杂记
